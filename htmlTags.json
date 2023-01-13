@@ -1,8 +1,4 @@
-from flask import Flask,jsonify,request
-path="Python/tutorial/htmlTags.json"
-
-
-jsonData = [{
+{
     "<!--...-->": {
         "Tag": "<!--...-->",
         "Description": "Defines a comment"
@@ -479,19 +475,4 @@ jsonData = [{
         "Tag": "<wbr>",
         "Description": "Defines a possible line-break"
     }
-}]
-  
-app =   Flask(__name__)
-  
-@app.route('/', methods = ['GET'])
-def ReturnJSON():
-    if(request.method == 'GET'):
-        data = {
-            "Modules" : 15,
-            "Subject" : "Data Structures and Algorithms",
-        }
-  
-        return jsonify(jsonData)
-  
-if __name__=='__main__':
-    app.run(debug=True)
+}
