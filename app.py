@@ -1,6 +1,5 @@
 from flask import Flask,jsonify,request
-path="Python/tutorial/htmlTags.json"
-
+from flask_cors import CORS
 
 jsonData = [{
     "<!--...-->": {
@@ -480,13 +479,15 @@ jsonData = [{
         "Description": "Defines a possible line-break"
     }
 }]
-  
+
 app =   Flask(__name__)
-  
+CORS(app)
+
+
 @app.route('/', methods = ['GET'])
 def ReturnJSON():
     if(request.method == 'GET'):
         return jsonify(jsonData)
-  
+
 if __name__=='__main__':
-    app.run(debug=True)
+   app.run(debug=True)
