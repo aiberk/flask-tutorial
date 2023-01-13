@@ -486,11 +486,6 @@ app =   Flask(__name__)
 @app.route('/', methods = ['GET'])
 def ReturnJSON():
     if(request.method == 'GET'):
-        data = {
-            "Modules" : 15,
-            "Subject" : "Data Structures and Algorithms",
-        }
-  
         return jsonify(jsonData)
   
 if __name__=='__main__':
